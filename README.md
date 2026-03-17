@@ -51,6 +51,8 @@ No account or payment required.
 
 ## Install on Firefox
 
+Does not work at the current moment!
+
 1. Download and unzip the folder (same as steps 1 and 2 above)
 2. Go to `about:debugging#/runtime/this-firefox`
 3. Click **Load Temporary Add-on**
