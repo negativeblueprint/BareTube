@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BareTube Settings</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0f0f0f;
+      color: #f1f1f1;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    header h1 span {
+      color: #aaa;
+      font-weight: 400;
+    }
+
+    .section {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      max-width: 560px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .option:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .option:first-of-type {
+      padding-top: 0;
+    }
+
+    .option label {
+      font-size: 14px;
+      color: #e0e0e0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Toggle switch */
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: #3a3a3a;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .slider::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+
+    .toggle input:checked + .slider {
+      background: #ff0000;
+    }
+
+    .toggle input:checked + .slider::before {
+      transform: translateX(20px);
+    }
+
+    #saved {
+      max-width: 560px;
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      margin-top: 8px;
+      height: 20px;
+      transition: opacity 0.3s;
+    }
+
+    /* Range slider */
+    .slider-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .slider-row:last-child { border-bottom: none; }
+
+    .slider-row-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slider-row-header label {
+      font-size: 14px;
+      color: #e0e0e0;
+    }
+
+    .slider-row-header .value {
+      background: #ff0000;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background: #3a3a3a;
+      outline: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #ff0000;
+      cursor: pointer;
+      box-shadow: 0 0 0 3px rgba(255,0,0,0.15);
+      transition: box-shadow 0.2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 0 6px rgba(255,0,0,0.2);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 50%;
+      background: #ff0000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/icon48.png" alt="BareTube">
+    <h1>BareTube <span>Settings</span></h1>
+  </header>
+
+  <div class="section">
+    <div class="section-title">Home Page</div>
+    <div class="option">
+      <label for="hideShorts">Hide Shorts</label>
+      <label class="toggle"><input type="checkbox" id="hideShorts"><span class="slider"></span></label>
+    </div>
+    <div class="option">
+      <label for="hideChips">Hide category tabs (All, Gaming...)</label>
+      <label class="toggle"><input type="checkbox" id="hideChips"><span class="slider"></span></label>
+    </div>
+    <div class="option">
+      <label for="hideExploreShelf">Hide Explore more topics shelf</label>
+      <label class="toggle"><input type="checkbox" id="hideExploreShelf"><span class="slider"></span></label>
+    </div>
+    <div class="slider-row">
+      <div class="slider-row-header">
+        <label for="videosPerRow">Videos per row</label>
+        <div class="value" id="videosPerRowValue">5</div>
+      </div>
+      <input type="range" id="videosPerRow" min="3" max="8" step="1">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Header</div>
+    <div class="option">
+      <label for="hideBell">Hide notification bell</label>
+      <label class="toggle"><input type="checkbox" id="hideBell"><span class="slider"></span></label>
+    </div>
+    <div class="option">
+      <label for="hideMic">Hide microphone button</label>
+      <label class="toggle"><input type="checkbox" id="hideMic"><span class="slider"></span></label>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Sidebar</div>
+    <div class="option">
+      <label for="hideSidebarShorts">Hide Shorts link</label>
+      <label class="toggle"><input type="checkbox" id="hideSidebarShorts"><span class="slider"></span></label>
+    </div>
+    <div class="option">
+      <label for="hideSubs">Hide Subscriptions link</label>
+      <label class="toggle"><input type="checkbox" id="hideSubs"><span class="slider"></span></label>
+    </div>
+    <div class="option">
+      <label for="hideExplore">Hide Explore section</label>
+      <label class="toggle"><input type="checkbox" id="hideExplore"><span class="slider"></span></label>
+    </div>
+    <div class="option">
+      <label for="hideMoreFromYT">Hide More from YouTube section</label>
+      <label class="toggle"><input type="checkbox" id="hideMoreFromYT"><span class="slider"></span></label>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Video Page</div>
+    <div class="option">
+      <label for="hideRecommended">Hide recommended videos sidebar</label>
+      <label class="toggle"><input type="checkbox" id="hideRecommended"><span class="slider"></span></label>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Visuals</div>
+    <div class="option">
+      <label for="hidePromos">Hide pop-ups and promo banners (turn off to use your profile menu)</label>
+      <label class="toggle"><input type="checkbox" id="hidePromos"><span class="slider"></span></label>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Performance</div>
+    <div class="option">
+      <label for="performanceMode">Performance mode (removes animations and ripple effects)</label>
+      <label class="toggle"><input type="checkbox" id="performanceMode"><span class="slider"></span></label>
+    </div>
+  </div>
+
+  <div id="saved"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
