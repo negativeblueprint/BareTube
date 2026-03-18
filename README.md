@@ -4,15 +4,13 @@ A free open source browser extension that strips all the clutter from YouTube. N
 
 ## Before:
 
-<img width="1889" height="951" alt="image" src="https://github.com/user-attachments/assets/8327762f-22f1-4a7f-a3bc-709a4d0e509a" />
-<img width="1913" height="953" alt="image" src="https://github.com/user-attachments/assets/ad750673-5449-4cb8-8f07-d4ce84daaa47" />
+<img width="1889" height="951" alt="image" src="https://github.com/user-attachments/assets/7f19d946-3dd6-4a77-a97f-6648c1d3deff" />
+<img width="1913" height="953" alt="image" src="https://github.com/user-attachments/assets/f33f56b8-9c70-43e4-bff3-147468baa825" />
 
 ## After:
 
-<img width="1901" height="944" alt="image" src="https://github.com/user-attachments/assets/03f2008c-6052-4985-b575-cea4a8ce8f77" />
-<img width="1915" height="940" alt="image" src="https://github.com/user-attachments/assets/ac12f7c5-8bc4-4799-b3cf-cbfafdc27e32" />
-
-
+<img width="1901" height="944" alt="image" src="https://github.com/user-attachments/assets/786ce84d-db74-4b47-be89-865921e780de" />
+<img width="1915" height="940" alt="image" src="https://github.com/user-attachments/assets/218fdd50-cebe-43cf-b2fb-62b024a84102" />
 
 ## What it changes/removes
 
